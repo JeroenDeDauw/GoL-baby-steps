@@ -38,4 +38,8 @@ class ProductionClassTest extends TestCase {
 		$this->assertFalse( ProductionClass::isAlive( false, 2 ) );
 	}
 
+	public function testDeadCellWithThreeNeighbors_comesAlive(): void {
+		$this->assertTrue( ProductionClass::isAlive( false, 3 ) );
+	}
+
 }
