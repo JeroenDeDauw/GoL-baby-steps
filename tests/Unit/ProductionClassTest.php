@@ -19,19 +19,23 @@ class ProductionClassTest extends TestCase {
 	}
 
 	public function testGivenNoAliveNeighbors_cellDies(): void {
-		$this->assertFalse( ProductionClass::isAlive( 0 ) );
+		$this->assertFalse( ProductionClass::isAlive( true, 0 ) );
 	}
 
 	public function testGivenOneAliveNeighbor_cellDies(): void {
-		$this->assertFalse( ProductionClass::isAlive( 0 ) );
+		$this->assertFalse( ProductionClass::isAlive( true, 1 ) );
 	}
 
 	public function testTwoAliveNeighbors_cellLives(): void {
-		$this->assertTrue( ProductionClass::isAlive( 2 ) );
+		$this->assertTrue( ProductionClass::isAlive( true, 2 ) );
 	}
 
 	public function testGivenFourAliveNeighbors_cellDies(): void {
-		$this->assertFalse( ProductionClass::isAlive( 4 ) );
+		$this->assertFalse( ProductionClass::isAlive( true, 4 ) );
+	}
+
+	public function testDeathCellWithTwoNeighbours_staysDeath(): void {
+		$this->assertFalse( ProductionClass::isAlive( false, 2 ) );
 	}
 
 }
