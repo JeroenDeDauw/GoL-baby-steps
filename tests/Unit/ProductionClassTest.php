@@ -14,10 +14,6 @@ use Such\NewProject\ProductionClass;
  */
 class ProductionClassTest extends TestCase {
 
-	public function testGetTrue() {
-		$this->assertTrue( ProductionClass::getTrue() );
-	}
-
 	public function testAliveCellWithNoNeighbours_cellDies(): void {
 		$this->assertFalse( ProductionClass::isAlive( true, 0 ) );
 	}
