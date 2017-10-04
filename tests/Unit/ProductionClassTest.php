@@ -42,4 +42,14 @@ class ProductionClassTest extends TestCase {
 		$this->assertTrue( ProductionClass::isAlive( false, 3 ) );
 	}
 
+	public function testEmptyGrid_returnsZeroNeighbours(): void {
+		$emptyGrid = [
+			[ false, false, false ],
+			[ false, false, false ],
+			[ false, false, false ],
+		];
+
+		$this->assertSame( 0, ProductionClass::countNeighbours( $emptyGrid ) );
+	}
+
 }

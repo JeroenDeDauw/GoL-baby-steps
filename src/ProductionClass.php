@@ -17,4 +17,8 @@ class ProductionClass {
 		return $neighbourCount === 3 || ( $neighbourCount >= 2 && $neighbourCount < 4 && $isAlive );
 	}
 
+	public static function countNeighbours( array $emptyGrid ): int {
+		return 0;
+	}
+
 }
