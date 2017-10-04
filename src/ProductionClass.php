@@ -13,4 +13,8 @@ class ProductionClass {
 		return true;
 	}
 
+	public static function isAlive( int $numCells ): bool {
+		return false;
+	}
+
 }
