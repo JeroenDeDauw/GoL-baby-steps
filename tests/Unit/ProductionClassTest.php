@@ -18,19 +18,19 @@ class ProductionClassTest extends TestCase {
 		$this->assertTrue( ProductionClass::getTrue() );
 	}
 
-	public function testGivenNoAliveNeighbors_cellDies(): void {
+	public function testAliveCellWithNoNeighbours_cellDies(): void {
 		$this->assertFalse( ProductionClass::isAlive( true, 0 ) );
 	}
 
-	public function testGivenOneAliveNeighbor_cellDies(): void {
+	public function testAliveCellWithOneNeighbour_cellDies(): void {
 		$this->assertFalse( ProductionClass::isAlive( true, 1 ) );
 	}
 
-	public function testTwoAliveNeighbors_cellLives(): void {
+	public function testAliveCellWithTwoNeighbours_cellSurvives(): void {
 		$this->assertTrue( ProductionClass::isAlive( true, 2 ) );
 	}
 
-	public function testGivenFourAliveNeighbors_cellDies(): void {
+	public function testAliveCellWithFourNeighbours_cellDies(): void {
 		$this->assertFalse( ProductionClass::isAlive( true, 4 ) );
 	}
 

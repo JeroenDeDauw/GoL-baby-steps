@@ -13,8 +13,8 @@ class ProductionClass {
 		return true;
 	}
 
-	public static function isAlive( bool $isAlive, int $numCells ): bool {
-		return $numCells === 3 || ( $numCells >= 2 && $numCells < 4 && $isAlive );
+	public static function isAlive( bool $isAlive, int $neighbourCount ): bool {
+		return $neighbourCount === 3 || ( $neighbourCount >= 2 && $neighbourCount < 4 && $isAlive );
 	}
 
 }
