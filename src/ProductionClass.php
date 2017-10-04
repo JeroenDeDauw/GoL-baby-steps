@@ -14,7 +14,7 @@ class ProductionClass {
 	}
 
 	public static function isAlive( int $numCells ): bool {
-		return false;
+		return $numCells >= 2 && $numCells < 4;
 	}
 
 }

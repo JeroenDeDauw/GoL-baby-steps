@@ -22,4 +22,16 @@ class ProductionClassTest extends TestCase {
 		$this->assertFalse( ProductionClass::isAlive( 0 ) );
 	}
 
+	public function testGivenOneAliveNeighbor_cellDies(): void {
+		$this->assertFalse( ProductionClass::isAlive( 0 ) );
+	}
+
+	public function testTwoAliveNeighbors_cellLives(): void {
+		$this->assertTrue( ProductionClass::isAlive( 2 ) );
+	}
+
+	public function testGivenFourAliveNeighbors_cellDies(): void {
+		$this->assertFalse( ProductionClass::isAlive( 4 ) );
+	}
+
 }
