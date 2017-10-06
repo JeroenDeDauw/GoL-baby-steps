@@ -19,14 +19,14 @@ class ProductionClass {
 
 	public static function countNeighbours( array $grid, int $row, int $col ): int {
 		return self::getCellValue( $grid[$row - 1][$col - 1] )
-			+ self::getCellValue( $grid[$row][$col - 1] )
-			+ self::getCellValue( $grid[$row + 1][$col - 1] )
-
 			+ self::getCellValue( $grid[$row - 1][$col] )
-			+ self::getCellValue( $grid[$row + 1][$col] )
-
 			+ self::getCellValue( $grid[$row - 1][$col + 1] )
+
+			+ self::getCellValue( $grid[$row][$col - 1] )
 			+ self::getCellValue( $grid[$row][$col + 1] )
+
+			+ self::getCellValue( $grid[$row + 1][$col - 1] )
+			+ self::getCellValue( $grid[$row + 1][$col] )
 			+ self::getCellValue( $grid[$row + 1][$col + 1] );
 	}
 
