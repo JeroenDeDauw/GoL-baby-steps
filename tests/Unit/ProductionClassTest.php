@@ -49,7 +49,27 @@ class ProductionClassTest extends TestCase {
 			[ false, false, false ],
 		];
 
-		$this->assertSame( 0, ProductionClass::countNeighbours( $emptyGrid ) );
+		$this->assertSame( 0, ProductionClass::countNeighbours( $emptyGrid, 1, 1 ) );
+	}
+
+	public function testOneNeighborLeft_returnsOneNeighbours(): void {
+		$emptyGrid = [
+			[ false, false, false ],
+			[ true, false, false ],
+			[ false, false, false ],
+		];
+
+		$this->assertSame( 1, ProductionClass::countNeighbours( $emptyGrid, 1, 1 ) );
+	}
+
+	public function testOneNeighborUpperLeft_returnsOneNeighbours(): void {
+		$emptyGrid = [
+			[ true, false, false ],
+			[ false, false, false ],
+			[ false, false, false ],
+		];
+
+		$this->assertSame( 1, ProductionClass::countNeighbours( $emptyGrid, 1, 1 ) );
 	}
 
 }
