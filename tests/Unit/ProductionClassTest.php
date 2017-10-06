@@ -123,4 +123,24 @@ class ProductionClassTest extends TestCase {
 		$this->assertSame( 1, ProductionClass::countNeighbours( $emptyGrid, 2, 1 ) );
 	}
 
+	public function testMiddleLeftCell_wrapsAroundAndCountsRightNeighbours(): void {
+		$emptyGrid = [
+			[ false, false, true ],
+			[ false, false, false ],
+			[ false, false, true ],
+		];
+
+		$this->assertSame( 2, ProductionClass::countNeighbours( $emptyGrid, 1, 0 ) );
+	}
+
+	public function testUpperRight_wrapsAroundAndCountsLeftBottomNeighbours(): void {
+		$emptyGrid = [
+			[ true, false, false ],
+			[ true, false, false ],
+			[ true, false, false ],
+		];
+
+		$this->assertSame( 3, ProductionClass::countNeighbours( $emptyGrid, 0, 2 ) );
+	}
+
 }
