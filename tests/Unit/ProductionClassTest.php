@@ -52,6 +52,16 @@ class ProductionClassTest extends TestCase {
 		$this->assertSame( 0, ProductionClass::countNeighbours( $emptyGrid, 1, 1 ) );
 	}
 
+	public function testOneNeighborUpperLeft_returnsOneNeighbours(): void {
+		$emptyGrid = [
+			[ true, false, false ],
+			[ false, false, false ],
+			[ false, false, false ],
+		];
+
+		$this->assertSame( 1, ProductionClass::countNeighbours( $emptyGrid, 1, 1 ) );
+	}
+
 	public function testOneNeighborLeft_returnsOneNeighbours(): void {
 		$emptyGrid = [
 			[ false, false, false ],
@@ -62,14 +72,35 @@ class ProductionClassTest extends TestCase {
 		$this->assertSame( 1, ProductionClass::countNeighbours( $emptyGrid, 1, 1 ) );
 	}
 
-	public function testOneNeighborUpperLeft_returnsOneNeighbours(): void {
+	public function testOneNeighborBottomLeft_returnsOneNeighbours(): void {
 		$emptyGrid = [
+			[ false, false, false ],
+			[ false, false, false ],
 			[ true, false, false ],
-			[ false, false, false ],
-			[ false, false, false ],
 		];
 
 		$this->assertSame( 1, ProductionClass::countNeighbours( $emptyGrid, 1, 1 ) );
+	}
+
+
+	public function testThreeNeighborOneTheRight_returnsThreeNeighbours(): void {
+		$emptyGrid = [
+			[ false, false, true ],
+			[ false, false, true ],
+			[ false, false, true ],
+		];
+
+		$this->assertSame( 3, ProductionClass::countNeighbours( $emptyGrid, 1, 1 ) );
+	}
+
+	public function testWhenAllCellsAreAlive_returnsEightNeighbours(): void {
+		$emptyGrid = [
+			[ true, true, true ],
+			[ true, true, true ],
+			[ true, true, true ],
+		];
+
+		$this->assertSame( 8, ProductionClass::countNeighbours( $emptyGrid, 1, 1 ) );
 	}
 
 }

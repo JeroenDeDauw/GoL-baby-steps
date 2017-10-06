@@ -17,9 +17,17 @@ class ProductionClass {
 		return $neighbourCount === 3 || ( $neighbourCount >= 2 && $neighbourCount < 4 && $isAlive );
 	}
 
-	public static function countNeighbours( array $emptyGrid, int $row, int $col ): int {
-		return self::getCellValue( $emptyGrid[$row][$col - 1] )
-			+ self::getCellValue( $emptyGrid[$row - 1][$col - 1] );
+	public static function countNeighbours( array $grid, int $row, int $col ): int {
+		return self::getCellValue( $grid[$row - 1][$col - 1] )
+			+ self::getCellValue( $grid[$row][$col - 1] )
+			+ self::getCellValue( $grid[$row + 1][$col - 1] )
+
+			+ self::getCellValue( $grid[$row - 1][$col] )
+			+ self::getCellValue( $grid[$row + 1][$col] )
+
+			+ self::getCellValue( $grid[$row - 1][$col + 1] )
+			+ self::getCellValue( $grid[$row][$col + 1] )
+			+ self::getCellValue( $grid[$row + 1][$col + 1] );
 	}
 
 	private static function getCellValue( bool $cell ): int {
