@@ -21,18 +21,18 @@ class ProductionClass {
 		$rowAbove = $row - 1 < 0 ? count( $grid ) - 1 : $row - 1;
 		$rowBelow = $row + 1 >= count( $grid ) ? 0 : $row + 1;
 		$lefterColumn = $col - 1 < 0 ? count( $grid[0] ) - 1 : $col - 1;
-		$rigtherColumn = $col + 1 >= count( $grid[0]) ? 0 : $col + 1;
+		$righterColumn = $col + 1 >= count( $grid[0] ) ? 0 : $col + 1;
 
 		return self::getCellValue( $grid[$rowAbove][$lefterColumn] )
 			+ self::getCellValue( $grid[$rowAbove][$col] )
-			+ self::getCellValue( $grid[$rowAbove][$rigtherColumn] )
+			+ self::getCellValue( $grid[$rowAbove][$righterColumn] )
 
 			+ self::getCellValue( $grid[$row][$lefterColumn] )
-			+ self::getCellValue( $grid[$row][$rigtherColumn] )
+			+ self::getCellValue( $grid[$row][$righterColumn] )
 
 			+ self::getCellValue( $grid[$rowBelow][$lefterColumn] )
 			+ self::getCellValue( $grid[$rowBelow][$col] )
-			+ self::getCellValue( $grid[$rowBelow][$rigtherColumn] );
+			+ self::getCellValue( $grid[$rowBelow][$righterColumn] );
 	}
 
 	private static function getCellValue( bool $cell ): int {
